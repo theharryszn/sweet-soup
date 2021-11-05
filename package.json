@@ -1,20 +1,28 @@
 {
   "name": "sweet-soup",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "A very delicious soup",
+  "main": "src/index.js",
   "type": "module",
-  "repository": "https://github.com/OpeAbidemi/sweet-soup.git",
-  "author": "Ope Abidemi Harry <opeabidemi@gmail.com>",
-  "license": "MIT",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpeAbidemi/sweet-soup.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Ope Abidiemi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OpeAbidemi/sweet-soup/issues"
+  },
+  "homepage": "https://github.com/OpeAbidemi/sweet-soup#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.13"
+    "chalk": "^4.1.2",
+    "inquirer": "^8.2.0"
   }
 }

@@ -1,14 +1,34 @@
-import express from "express";
-import { Message, User } from "./entities/index.js";
+import inquirer from 'inquirer'
+import { createReadME, listFiles, readReadME } from './modules/Creator.js'
 
-const app = express();
-
-app.use(express.json())
-
-app.use(express.static("public"))
-
-console.log(Message.all())
-
-app.listen(3000, () => {
-    console.log("Server has started 🚀🚀");
+inquirer.prompt([
+    {
+        name: "action",
+        type : "list",
+        message : "What do you want to do",
+        choices : [
+            "Read a file",  
+            "Create a file",
+            "List all available files"
+        ],
+    },
+]).then(answers => {
+    switch(answers.action){
+        case "Read a file": 
+            readReadME();
+            break;
+        case "List all available files":
+            listFiles();
+            break;
+        case "Create a file":
+            inquirer.prompt([
+                {
+                    name: "content",
+                    type: "input",
+                    message: "Start writing to the file",
+                }
+            ]).then(ans => {
+                createReadME(ans.content)
+            })
+    }
 })
